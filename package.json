@@ -20,6 +20,9 @@
   "dependencies": {
     "express": "^4.14.0",
     "grunt": "^1.0.1",
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-route": "1.5.x",
     "semantic-ui": "^2.2.6"
   }
 }

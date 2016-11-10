@@ -1,0 +1,15 @@
+<h1 class="bookingheader">Bookings</h1>
+<table class="ui celled padded table">
+  <thead>
+    <tr>
+      <th>Booking Name</th>
+      <th>Booking Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="booking in $ctrl.bookings">
+        <td>{{booking.name}}</td>
+        <td>{{booking.id}}</td>
+    </tr>
+  </tbody>
+</table>
