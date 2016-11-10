@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bookingApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Bookings</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <link rel="stylesheet" href="styles/index.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="booking-list/booking-list.module.js"></script>
+    <script src="booking-list/booking-list.component.js"></script>
+    <script src="booking-create/booking-create.module.js"></script>
+    <script src="booking-create/booking-create.component.js"></script>
+  </head>
+  <body>
+    <div class="ui menu">
+      <a class="header item">Bookings</a>
+      <a href="#!/bookings" class="item">All bookings</a>
+      <a href="#!/bookings/create" class="item">Create</a>
+    </div>
+
+
+    <div ng-view></div>
+
+  </body>
+</html>

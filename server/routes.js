@@ -1,28 +1,38 @@
 'use strict';
 
 var path = require('path');
-var bookings = {
-  1: "Asia",
-  2: "Europe",
-  3: "Africa",
-  4: "Australia",
-  5: "South America",
-  6: "North America",
-  7: "Antarica"
-};
+var bookings = [
+  { id: 1,
+    name: "Asia"},
+  { id: 2,
+    name: "Europe"},
+  { id: 3,
+    name: "Africa"},
+  { id: 4,
+    name: "Australia"},
+  { id: 5,
+    name: "North America"},
+  { id: 6,
+    name: "South America"}
+  ];
 
 module.exports = function (app) {
     app.route('/')
         .get(function (req, res) {
-            res.sendFile(path.resolve(app.get('appPath') + '/app/index.html'));
+            res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
         });
     app.get('/booking/list', (req, res) => {
       res.send(200, bookings);
     })
     app.get('/booking/id/:id', (req, res) => {
-      console.log(req.params.id)
+      let match = false;
 
-      if(bookings[req.params.id]){
+      bookings.forEach(function(element) {
+        if(element.id === parseInt(req.params.id)){
+          return match = true;
+        }
+      })
+      if(match){
         res.send(200, bookings[req.params.id]);
       } else {
         res.send(404, "404: no booking found")
