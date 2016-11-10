@@ -18,6 +18,8 @@
   },
   "homepage": "https://gitlab.com/vectio/scenario#README",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "grunt": "^1.0.1",
+    "semantic-ui": "^2.2.6"
   }
 }

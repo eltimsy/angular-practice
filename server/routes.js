@@ -14,7 +14,7 @@ var bookings = {
 module.exports = function (app) {
     app.route('/')
         .get(function (req, res) {
-            res.sendFile(path.resolve(app.get('appPath') + '/app/index.html'));
+            res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
         });
     app.get('/booking/list', (req, res) => {
       res.send(200, bookings);

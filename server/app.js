@@ -7,8 +7,10 @@ var config = require('./config');
 var app = express();
 var server = require('http').createServer(app);
 
-app.set('appPath', path.join(config.root, 'TimmyC/scenario-tim'));
+app.set('appPath', path.join(config.root, 'TimmyC/scenario-tim/app'));
 app.set('view engine', 'html');
+app.use(express.static("app"));
+
 require('./routes')(app);
 app.use(function(req, res) {
     res.status(400);

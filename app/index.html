@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bookingApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Bookings</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <link rel="stylesheet" href="styles/index.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="controller/app.js"></script>
+    <script src="controller/booking-list.component.js"></script>
+
+  </head>
+  <body>
+    <div class="ui menu">
+      <a class="header item">Bookings</a>
+      <a class="item">Item 1</a>
+      <a class="item">Item 2</a>
+    </div>
+    <h1 class="ui header">A Header</h1>
+    <span class="booking_paragraph">Here are some bookings</span>
+    <booking-list></booking-list>
+  </body>
+</html>
