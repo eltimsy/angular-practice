@@ -39,4 +39,9 @@ module.exports = function (app) {
       }
 
     })
+    app.post('/booking/new', (req, res) => {
+      let name = Object.keys(req.body)
+      bookings.push({name: name[0], id: bookings.length + 1})
+      res.send('ok')
+    })
 };

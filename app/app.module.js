@@ -1,5 +1,6 @@
 angular.module('bookingApp', [
   'ngRoute',
   'bookingList',
-  'bookingCreate'
+  'bookingCreate',
+  'bookingEdit'
 ]);
