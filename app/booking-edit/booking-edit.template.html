@@ -1,0 +1,9 @@
+<h3 class="listingheader">List of bookings</h3>
+<ul class="name_container" ng-repeat="booking in $ctrl.bookings">
+    <li class="name_items">{{booking.name}}</li>
+</ul>
+<form novalidate class="ui form">
+    Booking Old Name <input class="field" type="text" ng-model="booking.oldName" /><br /><br>
+    Booking New Name <input class="field" type="text" ng-model="booking.newName" /><br /><br>
+    <input class="ui button" type="submit" ng-click="submitForm()" value="Submit" />
+</form>

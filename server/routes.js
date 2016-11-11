@@ -44,4 +44,16 @@ module.exports = function (app) {
       bookings.push({name: name[0], id: bookings.length + 1})
       res.send('ok')
     })
+    app.post('/booking/edit', (req, res) => {
+      let data = Object.keys(req.body)
+      let dataParse = JSON.parse(data[0])
+      bookings.forEach(function(element) {
+        if(element.name === dataParse.oldName) {
+          console.log(element.name)
+          element.name = dataParse.newName;
+          return res.send('ok')
+        }
+      })
+      res.send('invalid')
+    })
 };

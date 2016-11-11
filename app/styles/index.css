@@ -1,4 +1,25 @@
+.container {
+  margin: 10px;
+}
+
 .bookingheader {
   margin-left: 15px;
   color: blue;
+}
+
+.name_container {
+  display: inline-flex;
+  list-style: none;
+  justify-content: flex-start;
+}
+
+.name_items {
+   text-align: center;
+}
+
+.listingheader {
+  text-align: center;
+  margin-bottom: -5px;
+  background-color: lightgray;
+  border-radius: 5px;
 }

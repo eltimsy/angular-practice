@@ -11,6 +11,9 @@ angular.
         when('/bookings/create', {
           template: '<booking-create></booking-create>'
         }).
+        when('/bookings/edit', {
+          template: '<booking-edit></booking-edit>'
+        }).
         otherwise('/bookings');
     }
   ]);
