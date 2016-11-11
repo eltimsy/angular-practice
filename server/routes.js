@@ -1,7 +1,7 @@
 'use strict';
 
-var path = require('path');
-var bookings = [
+const path = require('path');
+let bookings = [
   { id: 1,
     name: "Asia"},
   { id: 2,
@@ -49,7 +49,6 @@ module.exports = function (app) {
       let dataParse = JSON.parse(data[0])
       bookings.forEach(function(element) {
         if(element.name === dataParse.oldName) {
-          console.log(element.name)
           element.name = dataParse.newName;
           return res.send('ok')
         }

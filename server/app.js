@@ -1,19 +1,18 @@
 'use strict';
 
-var express = require('express');
-var path = require('path');
-var config = require('./config');
-var bodyParser = require('body-parser')
-
-var app = express();
-var server = require('http').createServer(app);
+const express = require('express');
+const path = require('path');
+const config = require('./config');
+const bodyParser = require('body-parser')
+const app = express();
+const server = require('http').createServer(app);
 
 app.set('appPath', path.join(config.root, 'TimmyC/scenario-tim/app'));
 app.set('view engine', 'html');
 app.use(express.static("app"));
-
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
+
 require('./routes')(app);
 app.use(function(req, res) {
     res.status(400);

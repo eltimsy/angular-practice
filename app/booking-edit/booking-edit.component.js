@@ -18,7 +18,6 @@ angular.
             data: $scope.booking,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           }).then(function(response) {
-            console.log(response)
             $scope.booking = {}
             if(response.data === 'ok'){
               $location.path('/booking');
