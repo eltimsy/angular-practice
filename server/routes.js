@@ -22,7 +22,7 @@ module.exports = function (app) {
             res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
         });
     app.get('/booking/list', (req, res) => {
-      res.send(200, bookings);
+      res.status(200).send(bookings);
     })
     app.get('/booking/id/:id', (req, res) => {
       let match = false;
@@ -33,9 +33,9 @@ module.exports = function (app) {
         }
       })
       if(match){
-        res.send(200, bookings[req.params.id]);
+        res.status(200).send(bookings[req.params.id]);
       } else {
-        res.send(404, "404: no booking found")
+        res.status(404).send("404: no booking found");
       }
 
     })
@@ -47,12 +47,17 @@ module.exports = function (app) {
     app.post('/booking/edit', (req, res) => {
       let data = Object.keys(req.body)
       let dataParse = JSON.parse(data[0])
+      let changed = false;
       bookings.forEach(function(element) {
         if(element.name === dataParse.oldName) {
-          element.name = dataParse.newName;
-          return res.send('ok')
+          changed = true;
+          return element.name = dataParse.newName;
         }
       })
-      res.send('invalid')
+      if(changed) {
+        res.send('ok')
+      } else {
+        res.send('invalid')
+      }
     })
 };

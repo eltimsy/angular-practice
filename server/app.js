@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 require('./routes')(app);
 app.use(function(req, res) {
     res.status(400);
-    res.send('404: Page not Found', 404);
+    res.send('404: Page not Found');
  });
 
 server.listen(config.port, config.ip, function () {
